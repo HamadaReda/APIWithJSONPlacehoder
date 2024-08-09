@@ -1,0 +1,254 @@
+:root {
+  --body-background-color: #f6f5f8;
+  --primary-hover-background-color: #f3f3f4;
+  --primary-background-color: white;
+  --sidebar-width: 300px;
+  --header-height: 60px;
+  --main-padding: 10px;
+}
+
+body {
+  margin: 0;
+  background-color: var(--body-background-color);
+  position: relative;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background-color: #bbb;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.container-fluid {
+  padding: 0 var(--main-padding);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.all-page {
+  display: flex;
+  column-gap: 20px;
+}
+
+.all-page .sidebar {
+  position: fixed;
+  left: calc(var(--sidebar-width) * -1);
+  top: 0;
+  background-color: var(--primary-background-color);
+  width: var(--sidebar-width);
+  height: 100vh;
+  z-index: 100;
+  overflow-y: auto;
+  transition: 0.3s;
+}
+
+.all-page .sidebar.active {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  background-color: var(--primary-background-color);
+  width: var(--sidebar-width);
+  height: 100vh;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.all-page .sidebar .image {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: var(--primary-background-color);
+  z-index: 100;
+}
+.all-page .sidebar .image img {
+  width: 100%;
+  height: 100%;
+}
+
+.all-page .sidebar .close-btn {
+  position: absolute;
+  border: none;
+  background: transparent;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 15px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #444;
+  display: block;
+}
+
+.all-page .sidebar .text {
+  padding: 0 20px 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.all-page .sidebar ul {
+  padding: 10px;
+}
+
+.all-page .sidebar ul li {
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.all-page .sidebar ul li.active {
+  background-color: var(--primary-hover-background-color);
+  border: 1px solid #ccc;
+}
+
+.all-page .sidebar ul li:hover {
+  padding-left: 25px;
+  background-color: var(--primary-hover-background-color);
+}
+
+.all-page .sidebar ul li span {
+  color: black;
+  font-weight: bold;
+}
+
+.all-page .sidebar .close-btn:hover {
+  color: black;
+}
+
+.all-page .sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.all-page .sidebar::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background-color: #ddd;
+  visibility: hidden;
+}
+.all-page .sidebar:hover::-webkit-scrollbar-thumb {
+  visibility: visible;
+}
+
+.all-page .main {
+  transition: 0.3s;
+}
+
+.main header {
+  position: fixed;
+  top: 10px;
+  height: var(--header-height);
+  width: calc(100% - (var(--main-padding) * 2));
+  background-color: var(--primary-background-color);
+  z-index: 70;
+  border-radius: 5px;
+  display: flex;
+  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.2);
+}
+
+.main .header-overlay {
+  position: fixed;
+  background-color: var(--body-background-color);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(var(--header-height) + 10px);
+  z-index: 60;
+}
+
+.main header .open-btn {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  color: #444;
+  padding-left: 20px;
+}
+
+.main header .open-btn:hover {
+  color: black;
+}
+
+.main header .links {
+  display: flex;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  margin-left: auto;
+}
+
+.main header .links li {
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+  font-weight: bold;
+}
+
+.main .content {
+  margin-top: calc(var(--header-height) + 10px + var(--main-padding));
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 99;
+}
+
+.overlay.active {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .all-page .sidebar {
+    left: 0px;
+  }
+
+  .all-page .main {
+    width: calc(100% - var(--sidebar-width));
+    margin-left: var(--sidebar-width);
+  }
+
+  .main header {
+    width: calc(100% - var(--sidebar-width) - (var(--main-padding) * 2));
+  }
+
+  .main header .open-btn {
+    display: none;
+  }
+
+  .all-page .sidebar .close-btn {
+    display: none;
+  }
+}
+
+footer {
+  background-color: #777;
+  color: #eee;
+  padding: 10px;
+  margin-top: var(--main-padding);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+footer .developer a {
+  color: inherit;
+}
+
+footer .developer a:hover {
+  color: white;
+  font-weight: bold;
+}

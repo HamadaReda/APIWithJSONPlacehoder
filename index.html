@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON Placeholder</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css.map" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="overlay" id="overlay"></div>
+    <div class="container-fluid">
+      <div class="all-page">
+        <div class="sidebar" id="sidebar">
+          <div class="image">
+            <img src="imgs/logo.png" alt="Logo" />
+            <button class="close-btn" id="close-btn">X</button>
+          </div>
+          <div class="text">All Users</div>
+          <ul id="all-users"></ul>
+        </div>
+        <div class="main" id="main">
+          <header id="header">
+            <button class="open-btn" id="open-btn">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul class="links" id="user-data"></ul>
+          </header>
+          <div class="header-overlay"></div>
+          <div class="content">
+            <div
+              class="row g-2 row-cols-1 row-cols-sm-2 row-cols-xl-3"
+              id="filtered-posts"
+            ></div>
+          </div>
+          <footer>
+            <div class="text-center">
+              copyright &copy; All rights are reserved 2024
+            </div>
+            <div class="developer text-center">
+              Designed by <a href="#">Eng. Hamada Reda</a>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js.map"></script>
+  <script src="js/all.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/APIWithJSONPlacholder.js"></script>
+</html>
